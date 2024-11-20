@@ -64,6 +64,8 @@
 
 header {
     background-color: #111111;
+    z-index: 1020;
+    
 }
 
 footer {
@@ -292,6 +294,7 @@ a {
 
 #header {
     transition: all 0.5s ease;
+    z-index: 1020;
 }
 
 .navbar-nav .nav-link:focus {
@@ -1527,6 +1530,7 @@ a {
 
     #header {
         background: #a55950d5;
+        z-index: 1020;
         backdrop-filter: blur(11px);
         -webkit-backdrop-filter: blur(11px);
     }
