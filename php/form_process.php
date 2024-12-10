@@ -5,8 +5,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $services = $_POST["service"];
         $name = $_POST["name"];
         $phone =$_POST['phone'];
-        $subject = "Subject Subscribe Email"; // Replace your Subject Here
-        $to = "recipient@example.com"; // Replace your Email Here
+        $subject = $_POST["subject"]; // Replace your Subject Here
+        $to = "contact@dhubmkt.com"; // Replace your Email Here
         $headers = "From: $email\r\n";
         $headers .= "Reply-To: $email\r\n";
         $headers .= "Content-type: text/html\r\n";
@@ -22,8 +22,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         }
     } elseif (isset($_POST['action']) and $_POST['action'] === 'subscribe') {
         $email = $_POST["email"];
-        $subject = "Subject Subscribe Email"; // Replace your Subject Here
-        $to = "recipient@example.com"; // Replace your Email Here
+        $subject = $_POST["subject"]; // Replace your Subject Here
+        $to = "contact@dhubmkt.com"; // Replace your Email Here
         $headers = "From: $email\r\n";
         $headers .= "Reply-To: $email\r\n";
         $headers .= "Content-type: text/html\r\n";
@@ -41,14 +41,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $phone =$_POST['phone'];
         $email = $_POST["email"];
         $message = $_POST["message"];
-        $subject = "subject"; // Replace your Subject Here
+        $subject = $_POST["subject"]; // Replace your Subject Here
 
-        $to = "recipient@example.com"; // Replace your Email Here
+        $to = "contact@dhubmkt.com"; // Replace your Email Here
         $headers = "From: $email\r\n";
         $headers .= "Reply-To: $email\r\n";
         $headers .= "Content-type: text/html\r\n";
 
-        $messageBody = "Name: $name<br>Email: $email<br>Message: $message";
+        $messageBody = "Name: $name<br>Email: $email<br>Phone: $phone<br>Message: $message";
 
         if (mail($to, $subject, $messageBody, $headers)) {
             echo "success"; // Send response Success
